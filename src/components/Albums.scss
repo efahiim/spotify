@@ -1,0 +1,45 @@
+@import '../variable';
+
+.albums {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    .upper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2rem;
+        h2 {
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: $lightColor;
+        }
+        .links {
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            color: $fontColor;
+            font-weight: 600;
+            font-size: 0.8rem;
+            font-family: $mainFont;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .lower {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        @media (min-width: $medium) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width: $large) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+}
